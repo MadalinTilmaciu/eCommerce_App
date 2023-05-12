@@ -3,7 +3,7 @@ part of '../index.dart';
 const String _kLoginUserPendingId = 'LoginUser';
 
 @freezed
-class LoginUser with _$CreateUser {
+class LoginUser with _$LoginUser {
   @Implements<StartAction>()
   const factory LoginUser({
     required String email,

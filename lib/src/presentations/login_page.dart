@@ -1,4 +1,5 @@
 import 'package:email_validator/email_validator.dart';
+import 'package:fancy_password_field/fancy_password_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 
@@ -55,44 +56,97 @@ class _LoginPageState extends State<LoginPage> {
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              TextField(
-                controller: _email,
-                decoration: const InputDecoration(
-                  hintText: 'email',
-                ),
-                keyboardType: TextInputType.emailAddress,
+              const Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Text(
+                    'Hello there,',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 26,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    textAlign: TextAlign.left,
+                  ),
+                  Text(
+                    'Welcome back',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 26,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    textAlign: TextAlign.left,
+                  ),
+                ],
               ),
-              TextField(
-                controller: _password,
-                decoration: const InputDecoration(
-                  hintText: 'password',
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 16,
                 ),
-                keyboardType: TextInputType.visiblePassword,
-                obscureText: true,
+                child: Column(
+                  children: <Widget>[
+                    TextField(
+                      controller: _email,
+                      decoration: const InputDecoration(
+                        hintText: 'EMAIL',
+                      ),
+                      keyboardType: TextInputType.emailAddress,
+                    ),
+                    const SizedBox(
+                      height: 32,
+                    ),
+                    FancyPasswordField(
+                      controller: _password,
+                      decoration: const InputDecoration(
+                        hintText: 'PASSWORD',
+                      ),
+                      hasStrengthIndicator: false,
+                    ),
+                  ],
+                ),
               ),
               const SizedBox(
                 height: 32,
               ),
-              PendingContainer(
-                builder: (BuildContext context, Set<String> pending) {
-                  if (pending.contains(LoginUser.pendingKey)) {
-                    return const Center(
-                      child: CircularProgressIndicator(),
-                    );
-                  }
-                  return ElevatedButton(
-                    onPressed: _onNext,
-                    child: const Text(
-                      'Login',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 18,
-                      ),
-                    ),
-                  );
-                },
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  PendingContainer(
+                    builder: (BuildContext context, Set<String> pending) {
+                      if (pending.contains(LoginUser.pendingKey)) {
+                        return const Center(
+                          child: CircularProgressIndicator(),
+                        );
+                      }
+                      return SizedBox(
+                        width: 160,
+                        child: ElevatedButton(
+                          onPressed: _onNext,
+                          style: ButtonStyle(
+                            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                              RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(18.0),
+                              ),
+                            ),
+                            backgroundColor: const MaterialStatePropertyAll<Color>(
+                              Colors.lightBlue,
+                            ),
+                          ),
+                          child: const Text(
+                            'LOGIN',
+                            style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                              fontSize: 18,
+                            ),
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                ],
               ),
               const SizedBox(
                 height: 32,
@@ -109,6 +163,7 @@ class _LoginPageState extends State<LoginPage> {
                       style: TextStyle(
                         fontWeight: FontWeight.w600,
                         fontSize: 18,
+                        color: Colors.lightBlue,
                       ),
                     ),
                     onPressed: () {
