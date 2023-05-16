@@ -46,7 +46,7 @@ class HomePage extends StatelessWidget {
                                           selected: selectedCategory == category,
                                           onSelected: (bool selected) {
                                             if (selected) {
-                                              StoreProvider.of<ProductState>(context)
+                                              StoreProvider.of<AppState>(context)
                                                 ..dispatch(SetCategory(category.id))
                                                 ..dispatch(ListProductsStart(category.id));
                                             }

@@ -10,9 +10,9 @@ class SelectedCategoryContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return StoreConnector<ProductState, Category>(
-      converter: (Store<ProductState> store) => store.state.categories.firstWhere(
-        (Category category) => category.id == store.state.selectedCategoryId,
+    return StoreConnector<AppState, Category>(
+      converter: (Store<AppState> store) => store.state.products.categories.firstWhere(
+        (Category category) => category.id == store.state.products.selectedCategoryId,
       ),
       builder: builder,
     );

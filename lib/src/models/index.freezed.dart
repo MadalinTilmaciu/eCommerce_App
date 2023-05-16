@@ -865,6 +865,11 @@ class _$_Category implements _Category {
   }
 
   @override
+  int compareTo(Category other) {
+    return title.compareTo(other.title);
+  }
+
+  @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&

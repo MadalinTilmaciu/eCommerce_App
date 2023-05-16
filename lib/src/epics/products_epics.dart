@@ -23,7 +23,9 @@ class ProductsEpics implements EpicClass<AppState> {
   Stream<dynamic> _listCategoryStart(Stream<ListCategoryStart> actions, EpicStore<AppState> store) {
     return actions.flatMap(
       (ListCategoryStart action) {
-        return Stream<void>.value(null).asyncMap((_) => _api.listCategory()).expand(
+        return Stream<void>.value(null)
+            .asyncMap((_) => _api.listCategory()) //
+            .expand(
           (List<Category> categories) {
             final List<Category> list = categories..sort();
 
@@ -32,7 +34,11 @@ class ProductsEpics implements EpicClass<AppState> {
               ListProducts.start(list.first.id),
             ];
           },
-        ).onErrorReturnWith((Object error, StackTrace stackTrace) => ListCategory.error(error, stackTrace));
+        ).onErrorReturnWith(
+          (Object error, StackTrace stackTrace) {
+            ListCategory.error(error, stackTrace);
+          },
+        );
       },
     );
   }

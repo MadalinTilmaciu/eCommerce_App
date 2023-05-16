@@ -10,8 +10,8 @@ class CategoryContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return StoreConnector<ProductState, List<Category>>(
-      converter: (Store<ProductState> store) => store.state.categories,
+    return StoreConnector<AppState, List<Category>>(
+      converter: (Store<AppState> store) => store.state.products.categories,
       builder: builder,
     );
   }
