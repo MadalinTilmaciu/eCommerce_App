@@ -4,6 +4,7 @@ part of 'index.dart';
 class AppState with _$AppState {
   const factory AppState({
     @Default(AuthState()) AuthState auth,
+    @Default(ProductState()) ProductState products,
     @Default(<String>{}) Set<String> pendingActions,
   }) = _AppState;
 

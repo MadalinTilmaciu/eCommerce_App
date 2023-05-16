@@ -9,6 +9,10 @@ part 'auth/create_user.dart';
 part 'auth/login_user.dart';
 part 'auth/logout_user.dart';
 
+part 'products/list_category.dart';
+part 'products/list_products.dart';
+part 'products/set_category.dart';
+
 abstract class UserAction {
   AppUser? get user;
 }

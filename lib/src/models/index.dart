@@ -7,3 +7,8 @@ part 'app_state.dart';
 
 part 'auth/app_user.dart';
 part 'auth/auth_state.dart';
+
+part 'products/product.dart';
+part 'products/category.dart';
+part 'products/vendor.dart';
+part 'products/product_state.dart';
