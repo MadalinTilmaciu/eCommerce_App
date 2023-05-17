@@ -11,6 +11,7 @@ part 'auth/logout_user.dart';
 
 part 'products/list_category.dart';
 part 'products/list_products.dart';
+part 'products/list_vendors.dart';
 part 'products/set_category.dart';
 
 abstract class UserAction {

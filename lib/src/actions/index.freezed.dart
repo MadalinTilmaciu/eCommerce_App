@@ -3091,6 +3091,554 @@ abstract class ListProductsError implements ListProducts, StopAction {
 }
 
 /// @nodoc
+mixin _$ListVendors {
+  String get pendingId => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(List<String> vendorIds, String pendingId) start,
+    required TResult Function(List<Vendor> vendors, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(List<String> vendorIds, String pendingId)? start,
+    TResult? Function(List<Vendor> vendors, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<String> vendorIds, String pendingId)? start,
+    TResult Function(List<Vendor> vendors, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ListVendorsStart value) start,
+    required TResult Function(ListVendorsSuccessful value) successful,
+    required TResult Function(ListVendorsError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ListVendorsStart value)? start,
+    TResult? Function(ListVendorsSuccessful value)? successful,
+    TResult? Function(ListVendorsError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ListVendorsStart value)? start,
+    TResult Function(ListVendorsSuccessful value)? successful,
+    TResult Function(ListVendorsError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $ListVendorsCopyWith<ListVendors> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ListVendorsCopyWith<$Res> {
+  factory $ListVendorsCopyWith(ListVendors value, $Res Function(ListVendors) then) =
+      _$ListVendorsCopyWithImpl<$Res, ListVendors>;
+  @useResult
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class _$ListVendorsCopyWithImpl<$Res, $Val extends ListVendors> implements $ListVendorsCopyWith<$Res> {
+  _$ListVendorsCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+  }) {
+    return _then(_value.copyWith(
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$ListVendorsStartCopyWith<$Res> implements $ListVendorsCopyWith<$Res> {
+  factory _$$ListVendorsStartCopyWith(_$ListVendorsStart value, $Res Function(_$ListVendorsStart) then) =
+      __$$ListVendorsStartCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({List<String> vendorIds, String pendingId});
+}
+
+/// @nodoc
+class __$$ListVendorsStartCopyWithImpl<$Res> extends _$ListVendorsCopyWithImpl<$Res, _$ListVendorsStart>
+    implements _$$ListVendorsStartCopyWith<$Res> {
+  __$$ListVendorsStartCopyWithImpl(_$ListVendorsStart _value, $Res Function(_$ListVendorsStart) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? vendorIds = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$ListVendorsStart(
+      null == vendorIds
+          ? _value._vendorIds
+          : vendorIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ListVendorsStart implements ListVendorsStart {
+  const _$ListVendorsStart(final List<String> vendorIds, [this.pendingId = _kListVendorsPendingId])
+      : _vendorIds = vendorIds;
+
+  final List<String> _vendorIds;
+  @override
+  List<String> get vendorIds {
+    if (_vendorIds is EqualUnmodifiableListView) return _vendorIds;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_vendorIds);
+  }
+
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'ListVendors.start(vendorIds: $vendorIds, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ListVendorsStart &&
+            const DeepCollectionEquality().equals(other._vendorIds, _vendorIds) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_vendorIds), pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ListVendorsStartCopyWith<_$ListVendorsStart> get copyWith =>
+      __$$ListVendorsStartCopyWithImpl<_$ListVendorsStart>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(List<String> vendorIds, String pendingId) start,
+    required TResult Function(List<Vendor> vendors, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return start(vendorIds, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(List<String> vendorIds, String pendingId)? start,
+    TResult? Function(List<Vendor> vendors, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return start?.call(vendorIds, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<String> vendorIds, String pendingId)? start,
+    TResult Function(List<Vendor> vendors, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(vendorIds, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ListVendorsStart value) start,
+    required TResult Function(ListVendorsSuccessful value) successful,
+    required TResult Function(ListVendorsError value) error,
+  }) {
+    return start(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ListVendorsStart value)? start,
+    TResult? Function(ListVendorsSuccessful value)? successful,
+    TResult? Function(ListVendorsError value)? error,
+  }) {
+    return start?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ListVendorsStart value)? start,
+    TResult Function(ListVendorsSuccessful value)? successful,
+    TResult Function(ListVendorsError value)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ListVendorsStart implements ListVendors, StartAction {
+  const factory ListVendorsStart(final List<String> vendorIds, [final String pendingId]) = _$ListVendorsStart;
+
+  List<String> get vendorIds;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$ListVendorsStartCopyWith<_$ListVendorsStart> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ListVendorsSuccessfulCopyWith<$Res> implements $ListVendorsCopyWith<$Res> {
+  factory _$$ListVendorsSuccessfulCopyWith(_$ListVendorsSuccessful value, $Res Function(_$ListVendorsSuccessful) then) =
+      __$$ListVendorsSuccessfulCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({List<Vendor> vendors, String pendingId});
+}
+
+/// @nodoc
+class __$$ListVendorsSuccessfulCopyWithImpl<$Res> extends _$ListVendorsCopyWithImpl<$Res, _$ListVendorsSuccessful>
+    implements _$$ListVendorsSuccessfulCopyWith<$Res> {
+  __$$ListVendorsSuccessfulCopyWithImpl(_$ListVendorsSuccessful _value, $Res Function(_$ListVendorsSuccessful) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? vendors = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$ListVendorsSuccessful(
+      null == vendors
+          ? _value._vendors
+          : vendors // ignore: cast_nullable_to_non_nullable
+              as List<Vendor>,
+      null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ListVendorsSuccessful implements ListVendorsSuccessful {
+  const _$ListVendorsSuccessful(final List<Vendor> vendors, [this.pendingId = _kListVendorsPendingId])
+      : _vendors = vendors;
+
+  final List<Vendor> _vendors;
+  @override
+  List<Vendor> get vendors {
+    if (_vendors is EqualUnmodifiableListView) return _vendors;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_vendors);
+  }
+
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'ListVendors.successful(vendors: $vendors, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ListVendorsSuccessful &&
+            const DeepCollectionEquality().equals(other._vendors, _vendors) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_vendors), pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ListVendorsSuccessfulCopyWith<_$ListVendorsSuccessful> get copyWith =>
+      __$$ListVendorsSuccessfulCopyWithImpl<_$ListVendorsSuccessful>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(List<String> vendorIds, String pendingId) start,
+    required TResult Function(List<Vendor> vendors, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return successful(vendors, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(List<String> vendorIds, String pendingId)? start,
+    TResult? Function(List<Vendor> vendors, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return successful?.call(vendors, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<String> vendorIds, String pendingId)? start,
+    TResult Function(List<Vendor> vendors, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(vendors, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ListVendorsStart value) start,
+    required TResult Function(ListVendorsSuccessful value) successful,
+    required TResult Function(ListVendorsError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ListVendorsStart value)? start,
+    TResult? Function(ListVendorsSuccessful value)? successful,
+    TResult? Function(ListVendorsError value)? error,
+  }) {
+    return successful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ListVendorsStart value)? start,
+    TResult Function(ListVendorsSuccessful value)? successful,
+    TResult Function(ListVendorsError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ListVendorsSuccessful implements ListVendors, StopAction {
+  const factory ListVendorsSuccessful(final List<Vendor> vendors, [final String pendingId]) = _$ListVendorsSuccessful;
+
+  List<Vendor> get vendors;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$ListVendorsSuccessfulCopyWith<_$ListVendorsSuccessful> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ListVendorsErrorCopyWith<$Res> implements $ListVendorsCopyWith<$Res> {
+  factory _$$ListVendorsErrorCopyWith(_$ListVendorsError value, $Res Function(_$ListVendorsError) then) =
+      __$$ListVendorsErrorCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({Object error, StackTrace stackTrace, String pendingId});
+}
+
+/// @nodoc
+class __$$ListVendorsErrorCopyWithImpl<$Res> extends _$ListVendorsCopyWithImpl<$Res, _$ListVendorsError>
+    implements _$$ListVendorsErrorCopyWith<$Res> {
+  __$$ListVendorsErrorCopyWithImpl(_$ListVendorsError _value, $Res Function(_$ListVendorsError) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+    Object? stackTrace = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$ListVendorsError(
+      null == error ? _value.error : error,
+      null == stackTrace
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ListVendorsError implements ListVendorsError {
+  const _$ListVendorsError(this.error, this.stackTrace, {this.pendingId = _kListVendorsPendingId});
+
+  @override
+  final Object error;
+  @override
+  final StackTrace stackTrace;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'ListVendors.error(error: $error, stackTrace: $stackTrace, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ListVendorsError &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ListVendorsErrorCopyWith<_$ListVendorsError> get copyWith =>
+      __$$ListVendorsErrorCopyWithImpl<_$ListVendorsError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(List<String> vendorIds, String pendingId) start,
+    required TResult Function(List<Vendor> vendors, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return error(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(List<String> vendorIds, String pendingId)? start,
+    TResult? Function(List<Vendor> vendors, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return error?.call(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<String> vendorIds, String pendingId)? start,
+    TResult Function(List<Vendor> vendors, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error, stackTrace, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ListVendorsStart value) start,
+    required TResult Function(ListVendorsSuccessful value) successful,
+    required TResult Function(ListVendorsError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ListVendorsStart value)? start,
+    TResult? Function(ListVendorsSuccessful value)? successful,
+    TResult? Function(ListVendorsError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ListVendorsStart value)? start,
+    TResult Function(ListVendorsSuccessful value)? successful,
+    TResult Function(ListVendorsError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ListVendorsError implements ListVendors, StopAction {
+  const factory ListVendorsError(final Object error, final StackTrace stackTrace, {final String pendingId}) =
+      _$ListVendorsError;
+
+  Object get error;
+  StackTrace get stackTrace;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$ListVendorsErrorCopyWith<_$ListVendorsError> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$SetCategory {
   String get categoryId => throw _privateConstructorUsedError;
 

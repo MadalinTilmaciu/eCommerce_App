@@ -68,26 +68,32 @@ class HomePage extends StatelessWidget {
                     );
                   }
 
-                  return ProductContainer(
-                    builder: (BuildContext context, List<Product> products) {
-                      return ListView.separated(
-                        itemCount: products.length,
-                        itemBuilder: (BuildContext context, int index) {
-                          final Product product = products[index];
+                  return VendorContainer(
+                    builder: (BuildContext context, List<Vendor> vendors) {
+                      return ProductContainer(
+                        builder: (BuildContext context, List<Product> products) {
+                          return ListView.separated(
+                            itemCount: products.length,
+                            itemBuilder: (BuildContext context, int index) {
+                              final Product product = products[index];
+                              final Vendor productVendor =
+                                  vendors.firstWhere((Vendor vendor) => vendor.id == product.vendorId);
 
-                          return ListTile(
-                            leading: Image.network(
-                              product.image,
-                              fit: BoxFit.cover,
-                              width: 56,
-                              height: 56,
-                            ),
-                            title: Text(product.title),
-                            subtitle: Text(product.description),
+                              return ListTile(
+                                leading: Image.network(
+                                  product.image,
+                                  fit: BoxFit.cover,
+                                  width: 56,
+                                  height: 56,
+                                ),
+                                title: Text('${product.title} / ${productVendor.name}'),
+                                subtitle: Text(product.description),
+                              );
+                            },
+                            separatorBuilder: (BuildContext context, int index) {
+                              return const Divider();
+                            },
                           );
-                        },
-                        separatorBuilder: (BuildContext context, int index) {
-                          return const Divider();
                         },
                       );
                     },
